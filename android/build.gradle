@@ -22,13 +22,15 @@ repositories {
 
 apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
-apply plugin: "kotlin-android-extensions"
+// apply plugin: "kotlin-android-extensions"
 
 def safeExtGet(prop, fallback) {
     rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
 }
 
 android {
+    namespace "com.xmartlabs.rnline"
+
     compileSdkVersion safeExtGet("compileSdkVersion", 31)
 
     defaultConfig {
